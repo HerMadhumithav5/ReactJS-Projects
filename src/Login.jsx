@@ -52,7 +52,7 @@ function Login() {
                 <a href="../HTML/">Forget Password?</a>
               </div>
             </div>
-            <button type="button" onClick={validate}>Login</button>
+            <button type="button"  className="login-btn"  onClick={validate}>Login</button>
             <p>
               Don't have an account?
               <a href="../HTML/register.html">Register</a>
