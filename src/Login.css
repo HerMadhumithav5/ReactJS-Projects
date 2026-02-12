@@ -1,0 +1,111 @@
+/* min-height=> it will adjust its height according to content and used for responsiveness
+   simply height is fixed ,even if content elaborates ,the height stays same leads to overlapping
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: url(https://wallpaperaccess.com/full/2314950.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  background: white;
+  width: 360px;
+  padding: 30px 20px;
+  border: 1px solid rgb(145, 55, 214);
+  border-radius: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2 {
+  color: rgb(145, 55, 214);
+  text-align: center;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 38px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 30%;
+  left: 12px;
+  color: rgb(86, 42, 191);
+}
+
+.input-box .eye {
+  left: auto;
+  right: 12px;
+  cursor: pointer;
+}
+
+.login p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(145, 55, 214);;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(to right, #6fb8f0, #9a5acb);
+  color: white;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.result{
+  color: #8712e0;
+  text-align: center;
+  font-size: larger;
+}
