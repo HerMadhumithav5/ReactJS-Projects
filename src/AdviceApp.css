@@ -1,0 +1,98 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container.light {
+  background: linear-gradient(to right, #3e82ee, #c2e9fb);
+  color: #222;
+}
+
+.container.dark {
+  background: linear-gradient(to right, #232526, #414345);
+  color: #fff;
+}
+
+.box {
+  position: relative;
+  width: 450px;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: rgb(202, 41, 41);
+}
+
+.container.dark .heading {
+  color: #00e0ff;
+}
+
+.container.dark .main-btn {
+  background-color: #00e0ff;
+  color: black;
+}
+.theme-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.theme-btn button {
+  font-size: 25px;
+  border: none;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+
+.advice-area {
+  min-height: 80px;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+.main-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #ff3b2f;
+}
+
+.counter {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.history ul {
+  max-height: 120px;
+  overflow-y: auto;
+  padding-left: 15px;
+}
+
+.history li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}

@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+.main{
   min-height: 100vh;
   background: url(https://wallpaperaccess.com/full/2314950.jpg);
   background-size: cover;
@@ -20,18 +20,16 @@ body {
   align-items: center;
 }
 
-.main {
-  background: white;
-  width: 360px;
-  padding: 30px 20px;
-  border: 1px solid rgb(145, 55, 214);
-  border-radius: 12px;
-}
 
 .form {
+  background-color: white;
   display: flex;
   flex-direction: column;
   gap: 15px;
+   width: 360px;
+  padding: 30px 20px;
+  border: 1px solid rgb(145, 55, 214);
+  border-radius: 12px;
 }
 
 h2 {
@@ -93,7 +91,7 @@ a:hover{
   text-decoration: underline;
 }
 
-button {
+.form button {
   margin-top: 10px;
   padding: 10px;
   background: linear-gradient(to right, #6fb8f0, #9a5acb);
