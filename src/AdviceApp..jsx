@@ -32,14 +32,11 @@ function AdviceApp() {
   return (
     <div className={`container ${mode}`}>
       <div className="box">
-
-        {/* Theme Toggle */}
         <div className="theme-btn">
           <button onClick={changeMode}>
             {mode === "light" ? "🌙" : "☀️"}
           </button>
         </div>
-
         <h1 className="heading">Daily Advice</h1>
         <div className="advice-area">
           <p>{message}</p>

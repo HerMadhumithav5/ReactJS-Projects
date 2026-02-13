@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background:thistle;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.register {
+  width: 500px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+.register > div {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+
+.gender , .maritalstatus{
+  display: flex !important;      
+  flex-direction: row !important; 
+  align-items: center;            
+  gap: 15px;                     
+  font-weight: bold;
+}
+
+.gender label {
+  display: flex;        
+  align-items: center;
+  gap: 5px;
+  font-weight: normal;
+}
+
+
+.gender label,
+.maritalstatus label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: normal;
+}
+
+table {
+  width: 500px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+table thead {
+  background-color: purple;
+  color: white;
+}
+
+table th {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.location{
+    font-weight: bold;
+}
