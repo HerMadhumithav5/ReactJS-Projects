@@ -1,61 +1,76 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AdviceApp.css";
 
 function AdviceApp() {
-  const [message, setMessage] = useState("Click the button to get advice");
-  const [pastAdvice, setPastAdvice] = useState([]);
-  const [totalCount, setTotalCount] = useState(0);
-  const [mode, setMode] = useState("light");
+  const [currentAdvice, setCurrentAdvice] = useState(
+    "Click the button to get advice"
+  );
+  const [adviceHistory, setAdviceHistory] = useState([]);
+  const [adviceCount, setAdviceCount] = useState(0);
+  const [theme, setTheme] = useState("light");
 
-  async function fetchAdvice() {
+  // Fetch advice from API
+  const fetchAdvice = async () => {
     try {
-      const res = await fetch("https://api.adviceslip.com/advice");
-      const data = await res.json();
-      const text = data.slip.advice;
-
-      setMessage(text);
-      setPastAdvice([text, ...pastAdvice]);
-      setTotalCount(totalCount + 1);
+      const response = await fetch("https://api.adviceslip.com/advice");
+      const data = await response.json();
+      setCurrentAdvice(data.slip.advice); // update current advice
     } catch (error) {
-      setMessage("Something went wrong. Try again.");
+      setCurrentAdvice("Something went wrong. Please try again.");
     }
-  }
+  };
 
-  function changeMode() {
-    if (mode === "light") {
-      setMode("dark");
-    } else {
-      setMode("light");
+  // useEffect: Update history and count whenever new advice is generated
+  useEffect(() => {
+    // Only update for real advice, not initial message or error
+    if (
+      currentAdvice &&
+      currentAdvice !==
+        "Click the button to get advice" &&
+      currentAdvice !==
+        "Something went wrong. Please try again."
+    ) {
+      // Prepend new advice to history
+      setAdviceHistory((prevHistory) => [currentAdvice, ...prevHistory]);
+      // Increment total advice count
+      setAdviceCount((prevCount) => prevCount + 1);
     }
-  }
+  }, [currentAdvice]); // runs whenever currentAdvice changes
+
+  // Toggle light/dark theme
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   return (
-    <div className={`container ${mode}`}>
+    <div className={`container ${theme}`}>
       <div className="box">
         <div className="theme-btn">
-          <button onClick={changeMode}>
-            {mode === "light" ? "🌙" : "☀️"}
+          <button onClick={toggleTheme}>
+            {theme === "light" ? "🌙" : "☀️"}
           </button>
         </div>
+
         <h1 className="heading">Daily Advice</h1>
+
         <div className="advice-area">
-          <p>{message}</p>
+          <p>{currentAdvice}</p>
         </div>
+
         <button className="main-btn" onClick={fetchAdvice}>
           Get Advice
         </button>
-        <p className="counter">
-          Advice Generated: {totalCount}
-        </p>
+
+        <p className="counter">Advice Generated: {adviceCount}</p>
+
         <div className="history">
           <h3>Previous Advice</h3>
           <ul>
-            {pastAdvice.map((item, i) => (
-              <li key={i}>{item}</li>
+            {adviceHistory.map((advice, index) => (
+              <li key={index}>{advice}</li>
             ))}
           </ul>
         </div>
-
       </div>
     </div>
   );
