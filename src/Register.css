@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+.main-body {
   background:thistle;
   display: flex;
   justify-content: center;
