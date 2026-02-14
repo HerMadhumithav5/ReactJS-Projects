@@ -6,11 +6,11 @@ function Profile(props) {
         <img src={props.image} alt="image" className="image" />
         <p className="name">{props.name}</p>
         <p className="name">{props.designation}</p>
-        <p className="skill">
-          {props.Skill.map((value) => (
+        <ul className="skill">
+          {props.skill.map((value) => (
             <li key={value} className="list">{value}</li>
           ))}
-        </p>
+        </ul>
       </div>
     </>
   );

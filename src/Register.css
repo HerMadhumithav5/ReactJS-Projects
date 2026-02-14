@@ -68,9 +68,13 @@ select {
   font-weight: normal;
 }
 
+.table{
+background-color: thistle;
+}
 table {
   width: 500px;
   border-collapse: collapse;
+  margin-left: 430px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);

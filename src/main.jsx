@@ -7,9 +7,9 @@ import AdviceApp from "./AdviceApp..jsx";
 import Register from "./Register.jsx";
 
 createRoot(document.getElementById("root")).render(
-  // <Register />,
-  //  <App/>
+  <Register />
+  // <App/>,
   // <QRCode/>
   //  <Login/>  ,
-  <AdviceApp/>
+  // <AdviceApp/>
 );

@@ -25,7 +25,7 @@ function Login() {
           <h2>Login</h2>
           <form className="login">
             <div className="input-box">
-              <i className="fa-solid fa-user"></i>
+              {/* <i className="fa-solid fa-user"></i> */}
               <input
                 type="text"
                 name="username"
@@ -35,7 +35,7 @@ function Login() {
               />
             </div>
             <div className="input-box">
-              <i className="fa-solid fa-lock"></i>
+              {/* <i className="fa-solid fa-lock"></i> */}
               <input
                 type="password"
                 placeholder="Enter Password"

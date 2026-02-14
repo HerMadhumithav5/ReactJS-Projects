@@ -97,7 +97,8 @@ function Register() {
           </select>
         </div>
       </div>
-
+</div>
+<div className="table">
       <table border="1">
         <thead>
           <tr>
@@ -119,7 +120,7 @@ function Register() {
           </tr>
         </tbody>
       </table>
-      </div>
+</div>
     </>
   );
 }

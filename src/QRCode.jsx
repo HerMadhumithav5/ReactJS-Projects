@@ -20,7 +20,7 @@ function QRCode() {
           Link: <input type="text" onChange={(e) => setLink(e.target.value)} />
         </div>
         <div className="size">
-          Size:{" "}
+          Size:
           <input type="number" onChange={(e) => setSize(e.target.value)} />
         </div>
         <button className="qr-button" onClick={api}>
