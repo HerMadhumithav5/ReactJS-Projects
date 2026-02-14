@@ -3,41 +3,33 @@ import "./AdviceApp.css";
 
 function AdviceApp() {
   const [currentAdvice, setCurrentAdvice] = useState(
-    "Click the button to get advice"
+    "Click the button to get advice",
   );
   const [adviceHistory, setAdviceHistory] = useState([]);
   const [adviceCount, setAdviceCount] = useState(0);
   const [theme, setTheme] = useState("light");
 
-  // Fetch advice from API
   const fetchAdvice = async () => {
     try {
       const response = await fetch("https://api.adviceslip.com/advice");
       const data = await response.json();
-      setCurrentAdvice(data.slip.advice); // update current advice
+      setCurrentAdvice(data.slip.advice);
     } catch (error) {
       setCurrentAdvice("Something went wrong. Please try again.");
     }
   };
 
-  // useEffect: Update history and count whenever new advice is generated
   useEffect(() => {
-    // Only update for real advice, not initial message or error
     if (
       currentAdvice &&
-      currentAdvice !==
-        "Click the button to get advice" &&
-      currentAdvice !==
-        "Something went wrong. Please try again."
+      currentAdvice !== "Click the button to get advice" &&
+      currentAdvice !== "Something went wrong. Please try again."
     ) {
-      // Prepend new advice to history
       setAdviceHistory((prevHistory) => [currentAdvice, ...prevHistory]);
-      // Increment total advice count
+
       setAdviceCount((prevCount) => prevCount + 1);
     }
-  }, [currentAdvice]); // runs whenever currentAdvice changes
-
-  // Toggle light/dark theme
+  }, [currentAdvice]);
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
